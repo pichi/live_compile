@@ -9,6 +9,8 @@ defmodule LiveCompile.MixProject do
       start_permanent: Mix.env() == :prod,
       description:
         "Lightning-fast ad-hoc data transformations in Livebook and IEx using dynamic JIT compilation.",
+      source_url: "https://github.com/pichi/live_compile",
+      package: package(),
       docs: &docs/0,
       deps: deps()
     ]
@@ -16,6 +18,14 @@ defmodule LiveCompile.MixProject do
 
   def application do
     []
+  end
+
+  defp package do
+    [
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/pichi/live_compile"},
+      files: ~w(lib .formatter.exs mix.exs README.md LICENCE)
+    ]
   end
 
   defp docs do
