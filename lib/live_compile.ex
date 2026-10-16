@@ -54,8 +54,13 @@ defmodule LiveCompile do
     caller_vars = Macro.Env.vars(__CALLER__)
 
     bindings =
-      Enum.map(caller_vars, fn {name, context} ->
-        {name, [generated: true], context}
+      Enum.map(caller_vars, fn
+        {name, counter} when is_integer(counter) ->
+          # Hygienic variable identifiers belong in AST metadata, not its context.
+          {name, [generated: true, counter: counter], nil}
+
+        {name, context} ->
+          {name, [generated: true], context}
       end)
 
     caller_location = Macro.Env.location(__CALLER__)

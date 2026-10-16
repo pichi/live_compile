@@ -33,7 +33,7 @@ Add `live_compile` to your dependencies in Livebook's setup cell or your `mix.ex
 
 ```elixir
 Mix.install([
-  {:live_compile, "~> 0.1.0"}
+  {:live_compile, "~> 0.2.0"}
 ])
 ```
 

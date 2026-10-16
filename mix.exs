@@ -4,7 +4,7 @@ defmodule LiveCompile.MixProject do
   def project do
     [
       app: :live_compile,
-      version: "0.1.0",
+      version: "0.2.0",
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
       description:
@@ -24,14 +24,14 @@ defmodule LiveCompile.MixProject do
     [
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/pichi/live_compile"},
-      files: ~w(lib .formatter.exs mix.exs README.md LICENCE)
+      files: ~w(lib .formatter.exs mix.exs README.md LICENCE CHANGELOG.md)
     ]
   end
 
   defp docs do
     [
       main: "readme",
-      extras: ["README.md"]
+      extras: ["README.md", "CHANGELOG.md"]
     ]
   end
 
